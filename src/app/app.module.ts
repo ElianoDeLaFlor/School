@@ -10,6 +10,7 @@ import { InterventionComponent } from './components/interventions/intervention/i
 import { InterventionlisteComponent } from './components/interventions/interventionliste/interventionliste.component';
 import { FormsModule } from '@angular/forms';
 import { AgentserviceService } from './services/agentservice.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AgentserviceService } from './services/agentservice.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [AgentserviceService],
   bootstrap: [AppComponent]
