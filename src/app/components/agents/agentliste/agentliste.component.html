@@ -6,27 +6,48 @@
                     class="form-control mb-3 w-100" />
             </div>
         </div>
-        <div class="table-responsive-sm mt-3" style="background-color: white;">
-            <table class="table table-sm table-responsive-md table-bordered table-hover">
-                <thead class="bg-light-yellow">
-                    <tr>
-                        <th scope="col">Nom</th>
-                        <th scope="col">Prénom</th>
-                        <th scope="col">Date d'enregistrement</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let item of agentliste">
-
-                        <td>{{item.nom}}</td>
-                        <td>{{item.prenom}}</td>
-                        <td>{{item.createdAt|date:"dd-MM-yyyy"}}</td>
-                    </tr>
-
-                </tbody>
-
-            </table>
+        <div *ngIf="agentliste.length==0,else show">
+            <h3>La liste des agents s'affichera ici</h3>
         </div>
+        <ng-template #show>
+            <div class="table-responsive-sm mt-3" style="background-color: white;">
+                <table class="table table-sm table-responsive-md table-bordered table-hover">
+                    <thead class="bg-light-yellow">
+                        <tr>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Prénom</th>
+                            <th scope="col">Date d'enregistrement</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of agentliste">
+
+                            <td>{{item.nom}}</td>
+                            <td>{{item.prenom}}</td>
+                            <td>{{item.createdAt|date:"dd-MM-yyyy"}}</td>
+                            <td>
+                                <div class="mt-4">
+                                    <div role="group">
+                                        <!-- <button type="button" id="détail" class="btn btn-primary">
+                                            <i class="bi bi-eyeglasses"></i>Afficher
+                                        </button> -->
+                                        <a type="button" [routerLink]="['agent',item.idAgent]" class="btn btn-warning">
+                                            <i class="bi bi-pencil-fill"></i>Editer
+                                        </a>
+                                        <button type="button" (click)="delete(item.idAgent)" class="btn btn-danger">
+                                            <i class="bi bi-trash-fill"></i>Supprimer
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+            </div>
+        </ng-template>
 
 
     </form>

@@ -9,6 +9,7 @@ import { AgentlisteComponent } from './components/agents/agentliste/agentliste.c
 import { InterventionComponent } from './components/interventions/intervention/intervention.component';
 import { InterventionlisteComponent } from './components/interventions/interventionliste/interventionliste.component';
 import { FormsModule } from '@angular/forms';
+import { AgentserviceService } from './services/agentservice.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AgentserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

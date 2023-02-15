@@ -23,13 +23,19 @@ export class AgentserviceService {
   }
 
   getAgentById(id: number) {
-    return this.http.get<Serviceresponse<Agent>>(this.url + 'agent/' + id, this.options);
+    return this.http.get<Serviceresponse<Agent>>(
+      this.url + "v1/agent/" + id,
+      this.options
+    );
   }
 
   deleteAgentById(id: number) {
     return this.http.delete<Serviceresponse<Agent>>(this.url + 'agent/' + id, this.options);
   }
   putAgent(agent: Agent) {
-    return this.http.put<Serviceresponse<Agent>>(this.url + 'agent', agent, this.options);
+    return this.http.put<Serviceresponse<Agent>>(this.url + 'agent/' + agent.idAgent, agent, this.options);
+  }
+  postAgent(agent: Agent) {
+    return this.http.post<Serviceresponse<Agent>>(this.url + 'agent', agent, this.options);
   }
 }
