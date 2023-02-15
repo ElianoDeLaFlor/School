@@ -1,0 +1,34 @@
+<div class="py-5 container-fluid">
+    <form #usedcodelistform='ngForm'>
+        <div class="row">
+            <div class="col-md-10">
+                <input type="text" id='txtsearch' placeholder="Recherche" name="txtsearch" [(ngModel)]="criteria"
+                    class="form-control mb-3 w-100" />
+            </div>
+        </div>
+        <div class="table-responsive-sm mt-3" style="background-color: white;">
+            <table class="table table-sm table-responsive-md table-bordered table-hover">
+                <thead class="bg-light-yellow">
+                    <tr>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Date d'enregistrement</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of agentliste">
+
+                        <td>{{item.nom}}</td>
+                        <td>{{item.prenom}}</td>
+                        <td>{{item.createdAt|date:"dd-MM-yyyy"}}</td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+
+    </form>
+
+</div>

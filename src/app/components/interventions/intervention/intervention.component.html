@@ -1,0 +1,132 @@
+<div class="container">
+    <div class="mt-5">
+        <form #agentform="ngForm" (ngSubmit)="onSubmit()">
+            <div class="card">
+                <div class="card-body">
+                    <p class="text-center pt-5 font-weight-bold" id="title" style="font-size:xx-large;"> Création d'une
+                        intervention</p>
+
+                    <div class="form-group">
+                        <label for="txtinterventionobjet" class="courstitle">Objet</label>
+                        <input type="text" id="txtinterventionobjet" name="txtinterventionobjet" class="form-control"
+                            aria-describedby="nomagentHelp" [(ngModel)]="intervention.objet" required minlength="3"
+                            maxlength="70" #interventionobjet="ngModel">
+
+                        <div *ngIf="interventionobjet.invalid && (interventionobjet.dirty || interventionobjet.touched)"
+                            class="alert alert-danger mt-2">
+
+                            <div>
+                                vérifiez votre saisie
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtinterventiontypetravail" class="courstitle">Type du travail</label>
+                        <input type="text" id="txtinterventiontypetravail" name="txtinterventiontypetravail"
+                            class="form-control" aria-describedby="nomagentHelp"
+                            [(ngModel)]="intervention.type_bon_travail" maxlength="40"
+                            #interventiontypetravail="ngModel">
+
+                        <div *ngIf="interventiontypetravail.invalid && (interventiontypetravail.dirty || interventiontypetravail.touched)"
+                            class="alert alert-danger mt-2">
+
+                            <div>
+                                vérifiez votre saisie
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtinterventiontypemaintenance" class="courstitle">Type de maintenance</label>
+                        <input type="text" id="txtinterventiontypemaintenance" name="txtinterventiontypemaintenance"
+                            class="form-control" aria-describedby="nomagentHelp"
+                            [(ngModel)]="intervention.type_maintenance" maxlength="40"
+                            #interventiontypemaintenance="ngModel">
+
+                        <div *ngIf="interventiontypemaintenance.invalid && (interventiontypemaintenance.dirty || interventiontypemaintenance.touched)"
+                            class="alert alert-danger mt-2">
+
+                            <div>
+                                vérifiez votre saisie
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtinterventionavancement" class="courstitle">Etat d'avancement</label>
+                        <input type="text" id="txtinterventionavancement" name="txtinterventionavancement"
+                            class="form-control" aria-describedby="nomagentHelp"
+                            [(ngModel)]="intervention.etat_avancement" maxlength="40"
+                            #interventiontypetravail="ngModel">
+
+                        <div *ngIf="interventiontypetravail.invalid && (interventiontypetravail.dirty || interventiontypetravail.touched)"
+                            class="alert alert-danger mt-2">
+
+                            <div>
+                                vérifiez votre saisie
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtinterventionpriorite" class="courstitle">Priorité</label>
+                        <input type="text" id="txtinterventionpriorite" name="txtinterventionpriorite"
+                            class="form-control" aria-describedby="nomagentHelp" [(ngModel)]="intervention.priorite"
+                            maxlength="40" #interventionpriorite="ngModel">
+
+                        <div *ngIf="interventionpriorite.invalid && (interventionpriorite.dirty || interventionpriorite.touched)"
+                            class="alert alert-danger mt-2">
+
+                            <div>
+                                vérifiez votre saisie
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtinterventionloc" class="courstitle">Localisation</label>
+                        <input type="text" id="txtinterventionloc" name="txtinterventionloc" class="form-control"
+                            aria-describedby="nomagentHelp" [(ngModel)]="intervention.localisation" maxlength="70"
+                            #interventionloca="ngModel">
+
+                        <div *ngIf="interventionloca.invalid && (interventionloca.dirty || interventionloca.touched)"
+                            class="alert alert-danger mt-2">
+
+                            <div>
+                                vérifiez votre saisie
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtinterventiongamme" class="courstitle">Gamme Opération</label>
+                        <input type="text" id="txtinterventiongamme" name="txtinterventiongamme" class="form-control"
+                            aria-describedby="nomagentHelp" [(ngModel)]="intervention.gamme_operation" maxlength="70"
+                            #interventiongamme="ngModel">
+
+                        <div *ngIf="interventiongamme.invalid && (interventiongamme.dirty || interventiongamme.touched)"
+                            class="alert alert-danger mt-2">
+
+                            <div>
+                                vérifiez votre saisie
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <hr />
+
+                <div>
+                    <button type="submit" id="submit" class="btn btn-outline-primary m-3"
+                        [disabled]="agentform.invalid">Enregister</button>
+                    <!-- <button type="button" class="btn btn-outline-secondary w-25 m-3" (click)="goBack()">Retour</button> -->
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+</div>
