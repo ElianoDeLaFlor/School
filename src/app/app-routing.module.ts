@@ -7,7 +7,9 @@ import { InterventionlisteComponent } from './components/interventions/intervent
 import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: "login", pathMatch: "full" },
   { path: 'login', component: LoginComponent },
+
   { path: 'agent/:id', component: AgentComponent },
   { path: 'agent', component: AgentComponent },
   { path: 'agentliste', component: AgentlisteComponent },
